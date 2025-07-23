@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # 開発用 Slack Bot サービス
+  slack-bot-dev:
+    build: .
+    container_name: forex-slack-bot-dev
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=DEBUG
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - /mnt/bigdata/00_students/mattsun_ucl/workspace/forex/llm_forex_simulator:/llm_forex_simulator:ro
+    command: python app.py
+    networks:
+      - forex-network-dev
+    ports:
+      - "3000:3000"  # デバッグ用ポート
+    stdin_open: true
+    tty: true
+
+  # 開発用スケジューラーサービス（オプション）
+  scheduler-dev:
+    build: .
+    container_name: forex-scheduler-dev
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=DEBUG
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - /mnt/bigdata/00_students/mattsun_ucl/workspace/forex/llm_forex_simulator:/llm_forex_simulator:ro
+    command: python scheduler.py
+    networks:
+      - forex-network-dev
+    stdin_open: true
+    tty: true
+    profiles:
+      - with-scheduler  # プロファイルで制御
+
+networks:
+  forex-network-dev:
+    driver: bridge

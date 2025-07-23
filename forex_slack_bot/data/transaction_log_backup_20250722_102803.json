@@ -1,0 +1,37 @@
+{
+  "transactions": [
+    {
+      "timestamp": "2025-07-21T09:45:38.930760",
+      "currency_pair": "USDJPY",
+      "amount": 100.0,
+      "rate": 148.4,
+      "user_id": "U092QNFMX98",
+      "type": "取引",
+      "status": "完了",
+      "id": "ca173ca4-4da3-46ef-bb20-f364f634c2a6"
+    },
+    {
+      "timestamp": "2025-07-21T09:54:02.773555",
+      "currency_pair": "USDJPY",
+      "amount": -100.0,
+      "rate": 148.4,
+      "user_id": "U092QNFMX98",
+      "type": "取引",
+      "status": "完了",
+      "id": "326d2ec5-0752-42cb-a28e-0478a1f7f440"
+    },
+    {
+      "timestamp": "2025-07-22T10:27:19.422754",
+      "currency_pair": "USDJPY",
+      "amount": 202.82,
+      "rate": 147.91,
+      "user_id": "U092QNFMX98",
+      "type": "取引",
+      "status": "完了",
+      "id": "eb126693-2fdf-44c1-a2fb-1c5c81b9bec5"
+    }
+  ],
+  "last_updated": "2025-07-22T10:27:19.424177",
+  "version": "1.0",
+  "total_count": 3
+}

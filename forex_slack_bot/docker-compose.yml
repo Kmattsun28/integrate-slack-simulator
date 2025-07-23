@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # Slack Bot メインサービス
+  slack-bot:
+    build: .
+    container_name: forex-slack-bot
+    restart: unless-stopped
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - /mnt/bigdata/00_students/mattsun_ucl/workspace/forex/llm_forex_simulator:/llm_forex_simulator:ro
+      - /mnt/bigdata/00_students/mattsun_ucl/workspace/forex/llm_forex_slack_simulator:/llm_forex_slack_simulator
+    command: python app.py
+    networks:
+      - forex-network
+    depends_on:
+      - scheduler
+    healthcheck:
+      test: ["CMD", "python", "/app/healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # 定期実行スケジューラーサービス
+  scheduler:
+    build: .
+    container_name: forex-scheduler
+    restart: unless-stopped
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - /mnt/bigdata/00_students/mattsun_ucl/workspace/forex/llm_forex_simulator:/llm_forex_simulator:ro
+      - /mnt/bigdata/00_students/mattsun_ucl/workspace/forex/llm_forex_slack_simulator:/llm_forex_slack_simulator:ro
+    command: python scheduler.py
+    networks:
+      - forex-network
+    healthcheck:
+      test: ["CMD", "python", "/app/healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  forex-network:
+    driver: bridge
+
+volumes:
+  forex-data:
+    driver: local
+  forex-logs:
+    driver: local

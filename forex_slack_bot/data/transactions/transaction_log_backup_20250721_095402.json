@@ -1,0 +1,17 @@
+{
+  "transactions": [
+    {
+      "timestamp": "2025-07-21T09:45:38.930760",
+      "currency_pair": "USDJPY",
+      "amount": 100.0,
+      "rate": 148.4,
+      "user_id": "U092QNFMX98",
+      "type": "取引",
+      "status": "完了",
+      "id": "ca173ca4-4da3-46ef-bb20-f364f634c2a6"
+    }
+  ],
+  "last_updated": "2025-07-21T09:45:38.932456",
+  "version": "1.0",
+  "total_count": 1
+}

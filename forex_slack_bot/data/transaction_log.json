@@ -1,0 +1,31 @@
+{
+  "transactions": [
+    {
+      "timestamp": "2025-07-21T12:00:00.000000",
+      "currency_pair": "USDJPY",
+      "amount": 202.82,
+      "rate": 147.91
+    },
+    {
+      "timestamp": "2025-07-21T12:00:00.000000",
+      "currency_pair": "EURJPY",
+      "amount": 174.24,
+      "rate": 172.17
+    },
+    {
+      "timestamp": "2025-07-22T12:00:00.000000",
+      "currency_pair": "EURJPY",
+      "amount": -50.0,
+      "rate": 172.57
+    },
+    {
+      "timestamp": "2025-07-22T12:00:00.000000",
+      "currency_pair": "USDJPY",
+      "amount": 100.0,
+      "rate": 147.79
+    }
+  ],
+  "last_updated": "2025-07-22T19:22:19.084694",
+  "version": "1.0",
+  "total_count": 4
+}

@@ -1,0 +1,54 @@
+{
+  "inference_info": {
+    "timestamp": "2025-07-22T10:50:50.122069",
+    "prompt_path": "output/prompts/20250722/1050/prompt_20250722_105050.txt",
+    "response_path": "output/inference/20250722/1050/inference_20250722_105050/response_20250722_105050.txt"
+  },
+  "current_rates": "     pair  market_rate  buy_rate  sell_rate  buy_spread  sell_spread\n0  EURUSD         1.13    1.1318     1.1282      0.0018       0.0018\n1  USDJPY       150.00  150.1500   149.8500      0.1500       0.1500\n2  EURJPY       170.00  170.1500   169.8500      0.1500       0.1500",
+  "portfolio_state": {
+    "current_balances": {
+      "JPY": 33851.49,
+      "USD": 302.82,
+      "EUR": 124.24
+    },
+    "initial_balances": {
+      "JPY": 33851.49,
+      "USD": 302.82,
+      "EUR": 124.24
+    },
+    "balance_changes": {
+      "JPY": 0.0,
+      "USD": 0.0,
+      "EUR": 0.0
+    },
+    "transaction_count": 0,
+    "creation_time": "2025-07-22T19:50:50.121619",
+    "last_update": "2025-07-22T20:03:37.806751"
+  },
+  "llm_response": "行動,通貨ペア,数量\nBUY,USDJPY,50\nSELL,EURJPY,25\n",
+  "extracted_decisions": [
+    {
+      "action": "BUY",
+      "symbol": "USDJPY",
+      "quantity": "50"
+    },
+    {
+      "action": "SELL",
+      "symbol": "EURJPY",
+      "quantity": "25"
+    }
+  ],
+  "performance_metrics": {
+    "initial_value_jpy": 99152.88999999998,
+    "current_value_jpy": 99152.88999999998,
+    "profit_loss_jpy": 0.0,
+    "return_rate_percent": 0.0,
+    "duration_hours": 0.22344930166666668,
+    "transaction_count": 0,
+    "balance_changes": {
+      "JPY": 0.0,
+      "USD": 0.0,
+      "EUR": 0.0
+    }
+  }
+}
